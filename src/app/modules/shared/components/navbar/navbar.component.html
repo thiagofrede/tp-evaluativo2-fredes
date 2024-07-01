@@ -1,14 +1,31 @@
 <mat-toolbar>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
+  <div>  <h1>De familia</h1></div>
+  <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="seccion" >
+    <mat-icon>menu</mat-icon>
+</button>
+<mat-menu #seccion="matMenu">
+  <!--copiamos los botones de inicio y produtctos-->
+  <button mat-menu-item routerLink="/inicio">Inicio</button>
+  <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
+
+</mat-menu>
+
   
+
+
+<mat-menu #producto="matMenu">
+  <button mat-menu-item routerLink="/producto">General</button>
+  <button mat-menu-item routerLink="/alimentacion">Alimentación</button>
+  <button mat-menu-item routerLink="/collares">Collares</button>
+  <button mat-menu-item routerLink="/casas">Casas</button>
+</mat-menu>
+
+     <!--Inicio de sesuib y el registro de un nuevo usuario-->
+     <button mat-icon-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+     <mat-menu id="sesiones" #usuario="matMenu">
+         <button mat-menu-item routerLink="/registro">registrarse</button>
+         <button mat-menu-item routerLink="/inicio-sesion">Iniciar Sesión</button>
+     </mat-menu>
+  
+     
+  </mat-toolbar>

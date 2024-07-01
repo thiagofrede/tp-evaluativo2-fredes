@@ -8,10 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Componentes Globales
 import { SharedModule } from './modules/shared/shared.module';
+import { ProductosComponent } from './productos/productos.component';
+import { IniciosesionComponent } from './autentificacion/iniciosesion/iniciosesion.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    ProductosComponent,
+    IniciosesionComponent
   ],
   imports: [
     BrowserModule,
