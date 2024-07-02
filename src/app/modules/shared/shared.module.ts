@@ -10,6 +10,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { AppRoutingModule } from 'src/app/app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FooterComponent } from './components/footer/footer.component';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    AppRoutingModule
+
   ],
   exports:[
     NavbarComponent,
@@ -29,7 +33,9 @@ import { FooterComponent } from './components/footer/footer.component';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    AppRoutingModule
+
   ]
 })
 export class SharedModule { }
