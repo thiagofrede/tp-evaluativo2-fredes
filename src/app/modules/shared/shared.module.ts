@@ -25,7 +25,6 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     MatToolbarModule,
     MatMenuModule,
     AppRoutingModule
-
   ],
   exports:[
     NavbarComponent,
@@ -35,7 +34,6 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     MatToolbarModule,
     MatMenuModule,
     AppRoutingModule
-
   ]
 })
 export class SharedModule { }

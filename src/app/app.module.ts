@@ -10,23 +10,19 @@ import {MatInputModule} from '@angular/material/input'
 
 //Componentes Globales
 import { SharedModule } from './modules/shared/shared.module';
-
-import { ProductosComponent } from './productos/productos.component';
 import { IniciosesionComponent } from './modules/autentificacion/pages/iniciosesion/iniciosesion.component';
 
 //Firebase ->importamos las herramientas de la base de datos
 import { environment } from 'src/environments/environments';
-import {AngularFireModule} from '@angular/fire/compat'
+import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFireAuthModule} from '@angular/fire/compat/auth'
 import {AngularFireStorageModule} from '@angular/fire/compat/storage'
-
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    ProductosComponent,
-    IniciosesionComponent
-
+    IniciosesionComponent,
+    
   ],
   imports: [
     BrowserModule,
