@@ -1,0 +1,7 @@
+{
+    "editor.pasteAs.enabled": false,
+    "terminal.integrated.macOptionClickForcesSelection": true,
+    "terminal.integrated.ignoreBracketedPasteMode": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "editor.pasteAs.showPasteSelector": "never"
+}
