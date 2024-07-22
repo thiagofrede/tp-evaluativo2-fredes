@@ -6,7 +6,18 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   //Referenciar Auth de firebase para inicializarlo
     constructor(public auth: AngularFireAuth) { }
     //Funcion para tomar Uid
-     
+     async ObtenerUid(){
+       //nos va a generar una promesa y la constante la va a capturar
+      const user =await this.auth.currentUser
+
+      //si el usuario no respeta la estructura de la interfaz/
+      //si tuvo probllemas para el registro -> ej:mal internet
+      if (user==null){
+        return null
+      }else{
+        return user.uid
+      }
+     }
     // Fucion para Registro
   
     registrar(email: string, password:string){

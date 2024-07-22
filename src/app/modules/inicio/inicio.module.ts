@@ -24,6 +24,7 @@ import {MatCardModule} from '@angular/material/card';
     InicioRoutingModule,
     MatButtonModule,
     MatCardModule
+    
   ]
 })
 export class InicioModule { }

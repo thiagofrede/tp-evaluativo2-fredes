@@ -3,22 +3,13 @@ import { Usuario } from 'src/app/models/usuario';
 //importamos servicio de autentificaccion
 import { AuthService } from '../services/auth.service';
 //importamos componnetes de rutas de aangular
-import { Route, Router } from '@angular/router';
-//angular
-import { MatFormFieldModule } from '@angular/material/form-field';
-
-
-
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-
-
-
 
   export class RegistroComponent {
     //Este "hide" es para el input de contraseña
@@ -28,7 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
       uid: '',
       nombre: '',
       apellido: '',
-      email: 'string',
+      email: '',
       password: '',
       rol: '',
     }
@@ -43,15 +34,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ) { }
     //Funcion asincronica para el registro
     async registrar() {
-        const credenciales: {
-          email: string;
-          password: string;
-      } = {
-          email: "usuario@example.com",
-          password: "contraseña123"
-      };
+        const credenciales= {
+          email: this.usuarios.email,
+          password: this.usuarios.password
+        }
       
-  
+      
       //const "res"  = resguarda una respuesta
       const res = await this.servicioAuth.registrar(credenciales.email, credenciales.password)
         //el metodo THEN nos devueve la respuesta esperada por a promesa
