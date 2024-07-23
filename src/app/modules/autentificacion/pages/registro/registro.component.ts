@@ -11,10 +11,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./registro.component.css']
 })
 
+
   export class RegistroComponent {
     //Este "hide" es para el input de contraseña
     hide = true;
-    // Importacion del Modelo / Interfaz
+    
+    // Importación del Modelo / Interfaz
     usuarios: Usuario = {
       uid: '',
       nombre: '',
@@ -22,10 +24,11 @@ import { Router } from '@angular/router';
       email: '',
       password: '',
       rol: '',
-    }
+    };
   
-    //Crear una coleccion para usuarios
+    // Crear una colección para usuarios
     coleccionUsuarios: Usuario[] = [];
+  servicioFirestore: any;
   
     //Referenciamos a nuestro servicio
     constructor(
@@ -67,9 +70,8 @@ import { Router } from '@angular/router';
     }
   
     limpiarinputs() {
-      /**
+    
        
-       */
       const input = {
         uid: this.usuarios.uid = '',
         nombre: this.usuarios.nombre = '',
@@ -77,8 +79,27 @@ import { Router } from '@angular/router';
         email: this.usuarios.email = '',
         password: this.usuarios.password = '',
         rol: this.usuarios.rol
-      }
+      };
+  /* 
+      // Enviamos los nuevos registros por medio del método push a la colección
+      this.coleccionUsuarios.push(credenciales);
   
-  
+      // Por consola
+      console.log(credenciales);*/
     }
+  
+    // Método asincrónico para guardar el usuario
+    async guardarUsuario() {
+      try {
+        await this.servicioFirestore.agregarUsuario(this.usuarios, this.usuarios.uid);
+        console.log(this.usuarios);
+      } catch (err) {
+        console.log("error => " + err);
+      }
+    }
+  
   }
+  
+
+
+
